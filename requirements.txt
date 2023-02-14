@@ -2,7 +2,6 @@ numpy
 pandas
 seaborn
 plotly_express
-matplotlib.pyplot 
 requests
 os 
 plotly.graph_objects
