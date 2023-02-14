@@ -1,0 +1,13 @@
+numpy
+pandas
+seaborn
+plotly_express
+matplotlib.pyplot 
+requests
+os 
+plotly.graph_objects
+streamlit_lottie
+webbrowser
+pycaret
+streamlit
+scikit-learn
