@@ -3,11 +3,8 @@ pandas
 seaborn
 plotly_express
 requests
-plotly.graph_objects
-streamlit_lottie
 webbrowser
 pycaret
 streamlit
-scikit-learn
 matplotlib==3.5.2
 
