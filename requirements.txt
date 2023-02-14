@@ -11,4 +11,5 @@ webbrowser
 pycaret
 streamlit
 scikit-learn
-matplotlib
+matplotlib==3.5.2
+
