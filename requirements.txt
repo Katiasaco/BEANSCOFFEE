@@ -3,7 +3,6 @@ pandas
 seaborn
 plotly_express
 requests
-webbrowser
 pycaret
 streamlit
 matplotlib==3.5.2
