@@ -5,7 +5,7 @@ import pandas as pd
 import seaborn as sns
 import plotly_express as px
 import matplotlib.pyplot as plt
-# mapas interactivos
+
 import matplotlib.pyplot as plt
 
 
