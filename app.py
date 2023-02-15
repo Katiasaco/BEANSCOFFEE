@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 
 #-----------------leer datos--------------------------
-precio= pd.read_csv(r'C:\Users\katia\.vscode\examplecode\MODULO_3\TRABAJO FINAL\data\coffee-prices-historical-chart-data.csv')
+precio= pd.read_csv(r'C:\Users\katia\.vscode\examplecode\MODULO_3\TRABAJO FINAL\coffee-prices-historical-chart-data.csv')
 precio.fillna(0, inplace=True) 
 precio["date"] = pd.to_datetime(precio["date"])
 precio['year'] = precio['date'].dt.year
