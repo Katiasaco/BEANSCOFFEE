@@ -2,8 +2,6 @@ numpy
 pandas
 seaborn
 plotly_express
-requests
-pycaret
 streamlit
 matplotlib==3.5.2
 
