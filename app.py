@@ -153,6 +153,9 @@ with tab_plots:
         st.plotly_chart(graf5)
 
         
+    st.write('Valores del café y connotaciones)
+    st.image('valores.png')
+        
     import plotly.express as px
     st.write('Vamos a realizar un estudio de los Quakers dependiendo del grano de café:')
     graf3=px.box(new_df,x= "Species", y = "Quakers",color ="Species",points='all', template="plotly_dark")
@@ -163,6 +166,15 @@ with tab_plots:
     graf4=px.box(new_df,x= "Country.of.Origin", y = "Quakers",color ="Country.of.Origin",points='all', template="plotly_dark")
     st.plotly_chart(graf4)
  
+    st.write('EXPORTACIONES POR PAÍS')
+    st.image('exp.png')
+    
+    st.write('IMPORTACIONES POR PAÍS')
+    st.image('imp.png')
+        
+    st.write('CANTIDADES POR BOLSA EN LAS EXPORTACIONES DEL CAFÉ')
+    st.image('bag.png')
+             
 tab_plots = tabs[4]
 with tab_plots:
     st.markdown("<h1 style='text-align: center; color: BROWN;'>MODELO PREDICTIVO</h1>", unsafe_allow_html=True)
