@@ -176,7 +176,7 @@ with tab_plots:
         # Librerías
     from neuralprophet import NeuralProphet
     # Lectura de datos
-    df = pd.read_csv(r'C:\Users\katia\.vscode\examplecode\MODULO_3\TRABAJO FINAL\data\prices.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/Katiasaco/BEANSCOFFEE/main/prices.csv')
     # Renombramos columnas (deben llamarse exactamente así)
     df.rename(columns = {'date':'ds', ' value':'y'}, inplace = True)
     # Cambiamos formato a fechas
