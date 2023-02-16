@@ -165,7 +165,7 @@ botonlink(link)
         
         
 import pathlib
-from bs4 import BeautifulSoup
+import BeautifulSoup
 import logging
 import shutil
 
