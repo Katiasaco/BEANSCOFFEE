@@ -21,7 +21,7 @@ st.set_page_config(page_title="www.beanscoffee.com")
 
 
 #INTRODUCCION ------------
-st.markdown("<h1 style='text-align: center;width:800; color: WHITE;'>BEANS COFFEE</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;width:800; color: BROWN;'>BEANS COFFEE</h1>", unsafe_allow_html=True)
 
 st.write ('Vive una experiencia sensitiva y mágica probando nuestro café de calidad. Desde Beans Coffee queremos hacer llegar CALIDAD a cada rincón de cada país, por eso es que exportamos todo tipo de café de cada región. Nos importas, por eso es que pensamos en cada detalle en nuestro servicio, donde destacamos la sencillez y alta gama del empaquetado, calidad, seguridad en transporte y buen precio.')
 
@@ -36,7 +36,7 @@ tabs = st.tabs(['HISTORIA', 'CAFÉ', 'CLIENTES'])
 tab_plots = tabs[0]
 
 with tab_plots:
-    st.markdown("<h1 style='text-align: center; color: WHITE;'>¿QUIÉNES SOMOS?</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: BROWN;'>¿QUIÉNES SOMOS?</h1>", unsafe_allow_html=True)
     st.markdown(
         """
         <style>
@@ -119,7 +119,7 @@ with tab_plots:
 
     ## MAPA EJE CAFETERO
 if st.sidebar.button('Eje Cafetero'):
-    st.markdown("<h1 style='text-align: center; color: WHITE;'>EJE CAFETERO COLOMBIANO</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: BROWN;'>EJE CAFETERO COLOMBIANO</h1>", unsafe_allow_html=True)
     st.write('El eje cafetero es una región geográfica, cultural, económica y ecológica de Colombia, ubicada en los departamentos de Caldas, Risaralda y Quindío, además de las regiones del noroccidente de Tolima, el suroeste de Antioquia, y el norte y oriente del Valle del Cauca,incluyendo las ciudades capitales de los cuatro primeros departamentos mencionados (Manizales, Pereira, Armenia e Ibagué, respectivamente).')
     col1, col2 = st.columns(2)
     with col1:
