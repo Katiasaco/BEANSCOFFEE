@@ -91,7 +91,7 @@ with tab_plots:
 
 tab_plots = tabs[2]
 with tab_plots:
-    st.markdown("<h1 style='text-align: center; color: BROWN;'>Opiniones de nuestros clientes </h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: BROWN;'>RESEÑAS </h1>", unsafe_allow_html=True)
     st.markdown(
             """
             <style>
