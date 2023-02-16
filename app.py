@@ -158,14 +158,14 @@ with tab_plots:
     col1, col2 = st.columns(2)
     with col1:    
    
-    st.write('Vamos a realizar un estudio de los Quakers dependiendo del grano de café:')
-    graf3=px.box(new_df,x= "Species", y = "Quakers",color ="Species",points='all', template="plotly_dark")
-    st.plotly_chart(graf3)
+        st.write('Vamos a realizar un estudio de los Quakers dependiendo del grano de café:')
+        graf3=px.box(new_df,x= "Species", y = "Quakers",color ="Species",points='all', template="plotly_dark")
+        st.plotly_chart(graf3)
 
     with col2:
-    st.write('QUAKERS POR PAÍS')
-    graf4=px.box(new_df,x= "Country.of.Origin", y = "Quakers",color ="Country.of.Origin",points='all', template="plotly_dark")
-    st.plotly_chart(graf4)
+        st.write('QUAKERS POR PAÍS')
+        graf4=px.box(new_df,x= "Country.of.Origin", y = "Quakers",color ="Country.of.Origin",points='all', template="plotly_dark")
+        st.plotly_chart(graf4)
  
     st.write('EXPORTACIONES POR PAÍS')
     st.image('exp.png')
