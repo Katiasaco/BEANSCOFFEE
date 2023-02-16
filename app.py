@@ -153,8 +153,7 @@ with tab_plots:
         graf5=px.histogram(new_df,x="Aroma" ,color = "Species" ,color_discrete_sequence = ["brown","yellow","green"])
         st.plotly_chart(graf5)
 
-
-
+        
     import plotly.express as px
     st.write('Vamos a realizar un estudio de los Quakers dependiendo del grano de café:')
 
@@ -169,7 +168,33 @@ with tab_plots:
     st.write('QUAKERS POR PAÍS')
     graf4=px.box(new_df,x= "Country.of.Origin", y = "Quakers",color ="Country.of.Origin",points='all', template="plotly_dark")
     st.plotly_chart(graf4)
-        
+ 
+
+ tab_plots = tabs[4]
+ with tab_plots:
+    st.write('Adentrándonos en un análisis más profundo de los datos, hemos realizado un modelo predictivo con NeuralProphet')
+        # Librerías
+    from neuralprophet import NeuralProphet
+    # Lectura de datos
+    df = pd.read_csv(r'C:\Users\katia\.vscode\examplecode\MODULO_3\TRABAJO FINAL\data\prices.csv')
+    # Renombramos columnas (deben llamarse exactamente así)
+    df.rename(columns = {'date':'ds', ' value':'y'}, inplace = True)
+    # Cambiamos formato a fechas
+    df['ds'] = pd.DatetimeIndex(df['ds'])
+    # Mostramos
+    df.info()
+
+        # Instanciamos clase
+    m = NeuralProphet()
+    # Partimos datos especificando unidad mínima de tiempo
+    df_train, df_val = m.split_df(df, freq='Y', valid_p = 0.2)
+    # Entrenamos modelo
+    metrics = m.fit(df_train, freq='Y', validation_df=df_val)
+    metrics.plot(figsize=(15,4))
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.pyplot()
+
+
         
 ##SIDEBAR-----------
     st.sidebar.image('logo.png',width=150)
