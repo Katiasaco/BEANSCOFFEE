@@ -157,7 +157,7 @@ with tab_plots:
     
     col1, col2 = st.columns(2)
     with col1:    
-    import plotly.express as px
+   
     st.write('Vamos a realizar un estudio de los Quakers dependiendo del grano de café:')
     graf3=px.box(new_df,x= "Species", y = "Quakers",color ="Species",points='all', template="plotly_dark")
     st.plotly_chart(graf3)
