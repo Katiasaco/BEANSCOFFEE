@@ -164,10 +164,6 @@ botonlink(link)
         
         
         
-import pathlib
-import BeautifulSoup
-import logging
-import shutil
 
 
 
