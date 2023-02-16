@@ -143,10 +143,14 @@ if st.sidebar.button('Precios'):
     import streamlit as st
     import plotly.express as px
 
-    # Generar el gráfico con Plotly Express
-    fig = px.bar(precio.groupby('year').sum(), y=' value', color=' value')
-
-    # Mostrar el gráfico en Streamlit
+    fig = px.violin(precio,
+        x='year',
+        y=' value',
+        color='year',
+        box=True,
+        points='all',
+        template='plotly_dark')
+    
     st.plotly_chart(fig)
 
 
