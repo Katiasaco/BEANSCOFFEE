@@ -215,8 +215,6 @@ if st.sidebar.button('Precios'):
     # Muestra el título utilizando la función st.markdown()
     st.markdown(titulo, unsafe_allow_html=True)
 
-    import streamlit as st
-    import plotly.express as px
 
     fig = px.violin(precio,
         x='year',
