@@ -14,7 +14,7 @@ precio["date"] = pd.to_datetime(precio["date"])
 precio['year'] = precio['date'].dt.year
 
 a=pd.read_csv('https://github.com/Katiasaco/BEANSCOFFEE/blob/main/arabica_data_cleaned.csv')
-ro=pd.read_csv(r'C:\Users\katia\.vscode\examplecode\MODULO_3\TRABAJO FINAL\robusta_data_cleaned.csv')
+ro=pd.read_csv('https://github.com/Katiasaco/BEANSCOFFEE/blob/main/robusta_data_cleaned.csv')
 
 
 import pandas as pd
