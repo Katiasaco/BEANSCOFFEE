@@ -14,8 +14,29 @@ precio["date"] = pd.to_datetime(precio["date"])
 precio['year'] = precio['date'].dt.year
 
 a= pd.read_csv('https://github.com/Katiasaco/BEANSCOFFEE/blob/main/arabica_data_cleaned.csv')
-ro=
+ro=pd.read_csv('https://github.com/Katiasaco/BEANSCOFFEE/blob/main/robusta_data_cleaned.csv')
 st.set_page_config(page_title="www.beanscoffee.com")
+
+
+import pandas as pd
+new_df = pd.concat([a, ro], axis=0)
+
+#unimos ambas tablas.
+
+from datetime import datetime
+formatos_fecha = ['%B %drd, %Y','%B %dth, %Y','%B %dst, %Y']
+
+def extraer_anio(fecha):
+
+    for formato in formatos_fecha:
+        try:
+            fecha_dt = datetime.strptime(fecha, formato)
+            return fecha_dt.year
+        except ValueError:
+            pass
+    return 'Formato de fecha no reconocido'
+
+new_df['year'] = new_df['Expiration'].apply(extraer_anio)
 
 
 
@@ -110,6 +131,65 @@ with tab_plots:
     with col2: 
         st.image('go.png',width=500)
 
+tab_plots = tabs[3]
+with tab_plots:
+    st.write('Una vez entendida la idea de nuestro negocio, nos centramos en el análisis fundamental.Para hacer más amena la exposición y aprovechando la hora que es, os invito a un a un cafelito virtual que os llegará en breves. ')
+    st.write('Nuestro equipo de data analyst hace revisiones de todos y cada uno de los datos a explorar hasta que tomamos una conclusión y unas nuevas indicaciones comerciales para seguir en mejora en nuestro negocio.')
+    #cantidad de tipos de cafe segun origenes.
+    st.write('El café arábica está considerado como uno de los mejores cafés en grano, representa el 70% de la producción mundial de café debido a su deliciosos sabor.')
+    st.write('Vamos a examinar los datos que tenemos según los granos de café dependiendo del país. Nos damos cuenta de que la gran parte son tipo Arábica procedentes de Guatemala, Brazil, México o Colombia.')
+    graf=px.histogram(new_df,x="Species" ,color = "Country.of.Origin" ,color_discrete_sequence = ["brown","yellow","green"])
+    st.plotly_chart(graf)
+    
+    #cantidad de tipos de sabor de cafe segun origenes.
+    st.write('Examinamos la puntuación que tenemos por sabores y aromas en especies del café. Normalmente, se utiliza una escala para definir los niveles de intensidad:')
+    st.write('1-4: café de cuerpo ligero con sabor delicado.')
+    st.write('5-7: café equilibrado, rico en sabores.')
+    st.write('8-10: café de cuerpo redondo con aromas generosos.')
+    st.write('La mayor parte del cafe que exportamos se encuentran en nivel 7, es decir tenemos un café equilibrado y rico en sabores con aromas generosos.')
+    col1, col2 = st.columns(2)
+    with col1:
+        graf2=px.histogram(new_df,x="Species" ,color = "Flavor" ,color_discrete_sequence = ["brown","yellow","green"])
+        st.plotly_chart(graf2)
+    with col2:
+        graf5=px.histogram(new_df,x="Aroma" ,color = "Species" ,color_discrete_sequence = ["brown","yellow","green"])
+        st.plotly_chart(graf5)
+
+    st.write('pregunta de paloma: Es un tipo de grano que produce un café mucho más denso y barroso, se cultiva continuamente, y no tiene tanta vida en la fruta del café por eso mismo no tiene tantas connotaciones afrutadas con el café arábica. Se usa sobre todo en el café expreso o un café con leche ya que le dará esa espumita que tanto pedimos. Se suele mezclar con torrefacto, es un tipo de grano de muy baja calidad que se quema con caramelo y le da ese toque de cuerpo y connotaciones dulces. ')
+
+    import plotly.express as px
+    st.write('Vamos a realizar un estudio de los Quakers dependiendo del grano de café:')
+    st.write('El grano Quaker es un defecto que solo se identifica cuando el grano verde es tostado, generalmente es causado por granos inmaduros, estos por recolecciones de granos verdes o pintones, en algunas ocasiones también se presentan por nutrición deficiente en el cultivo.')
+
+    col1, col2 = st.columns(2)
+    with col1:
+        graf3=px.box(new_df,x= "Species", y = "Quakers",color ="Species",points='all', template="plotly_dark")
+        st.plotly_chart(graf3)
+
+    with col2:
+        st.image('k.png',width= 200)
+
+    st.write('Después de la información que nos proporciona los quakers, los buscamos por país para checkear que país nos da más grano defectuoso.')
+    st.write('Nos damos cuenta que los países con más quakers son : Brazil, Colombia y Guatemala.')
+    graf4=px.box(new_df,x= "Country.of.Origin", y = "Quakers",color ="Country.of.Origin",points='all', template="plotly_dark")
+    st.plotly_chart(graf4)
+
+    st.write('Basicamente, son los países con mas exportaciones que existen mundialmente. Por eso mismo, las cantidades de granos defectuosos aumentan. Ya vimos que las cantidades apenas son insignificantes para lo que realmente seguimos afirmando que el grano Arábica y de estos países siempre será una buena opción.')
+
+
+    fig = px.violin(new_df,
+        x='Body',
+        y='Species',
+        color='Body',
+        box=True,
+        points='all',
+        template='plotly_dark')
+    
+    st.plotly_chart(fig)
+        
+        
+  
+
 
 
 ##SIDEBAR-----------
@@ -159,5 +239,7 @@ def botonlink (link):
     st.sidebar.markdown(href, unsafe_allow_html=True)
 botonlink(link)
   
-        
+with st.sidebar:
+    audio1=open('cafe.mp3', "rb")
+    st.audio(audio1)       
         
