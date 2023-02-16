@@ -50,7 +50,6 @@ st.write ('Vive una experiencia sensitiva y mágica probando nuestro café de ca
 st.image('eje.jpg')
 
 
-
 ### TAB PARA ORDENAR LA PÁGINA --------------------
 tabs = st.tabs(['HISTORIA', 'CAFÉ', 'CLIENTES', 'DATOS', 'ANALISIS CIENTÍFICO'])      
         
