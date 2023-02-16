@@ -165,7 +165,7 @@ botonlink(link)
         
         
 import pathlib
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup4
 import logging
 import shutil
 
@@ -173,10 +173,10 @@ import shutil
 def inject_ga():
     GA_ID = "google_analytics"
 
-        
+
     GA_JS = """
 
-
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7R29TF6Z1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -185,14 +185,12 @@ def inject_ga():
 
   gtag('config', 'G-B7R29TF6Z1');
 </script>
-    """    
-        
-
+    """
 
     # Insert the script in the head tag of the static template inside your virtual
-    index_path = pathlib.Path(st._file_).parent / "static" / "index.html"
+    index_path = pathlib.Path(st.file).parent / "static" / "index.html"
     logging.info(f'editing {index_path}')
-    soup = BeautifulSoup(index_path.read_text(), features="html.parser")
+    soup = BeautifulSoup4(index_path.read_text(), features="html.parser")
     if not soup.find(id=GA_ID): 
         bck_index = index_path.with_suffix('.bck')
         if bck_index.exists():
