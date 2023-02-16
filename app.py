@@ -6,8 +6,6 @@ import seaborn as sns
 import plotly_express as px
 import matplotlib.pyplot as plt
 
-import matplotlib.pyplot as plt
-
 
 #-----------------leer datos--------------------------
 precio= pd.read_csv('https://raw.githubusercontent.com/Katiasaco/BEANSCOFFEE/main/prices.csv')
