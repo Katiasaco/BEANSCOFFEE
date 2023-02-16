@@ -171,26 +171,9 @@ with tab_plots:
 tab_plots = tabs[4]
 with tab_plots:
     st.write('Adentrándonos en un análisis más profundo de los datos, hemos realizado un modelo predictivo con NeuralProphet')
-        # Librerías
-    from neuralprophet import NeuralProphet
-    # Lectura de datos
-    df = pd.read_csv('https://raw.githubusercontent.com/Katiasaco/BEANSCOFFEE/main/prices.csv')
-    # Renombramos columnas (deben llamarse exactamente así)
-    df.rename(columns = {'date':'ds', ' value':'y'}, inplace = True)
-    # Cambiamos formato a fechas
-    df['ds'] = pd.DatetimeIndex(df['ds'])
-    # Mostramos
-    df.info()
+    st.image('
 
-        # Instanciamos clase
-    m = NeuralProphet()
-    # Partimos datos especificando unidad mínima de tiempo
-    df_train, df_val = m.split_df(df, freq='Y', valid_p = 0.2)
-    # Entrenamos modelo
-    metrics = m.fit(df_train, freq='Y', validation_df=df_val)
-    metrics.plot(figsize=(15,4))
-    st.set_option('deprecation.showPyplotGlobalUse', False)
-    st.pyplot()
+
 
 
         
