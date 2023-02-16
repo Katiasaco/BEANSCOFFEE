@@ -173,8 +173,8 @@ import shutil
 def inject_ga():
     GA_ID = "google_analytics"
 
-
-    GA_JS = 
+        
+    GA_JS = """
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7R29TF6Z1"></script>
@@ -185,7 +185,9 @@ def inject_ga():
 
   gtag('config', 'G-B7R29TF6Z1');
 </script>
-    
+    """    
+        
+
 
     # Insert the script in the head tag of the static template inside your virtual
     index_path = pathlib.Path(st._file_).parent / "static" / "index.html"
