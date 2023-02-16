@@ -176,7 +176,7 @@ def inject_ga():
 
     GA_JS = 
 
-<!-- Google tag (gtag.js) -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7R29TF6Z1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
