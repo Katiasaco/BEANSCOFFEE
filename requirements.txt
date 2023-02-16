@@ -4,7 +4,4 @@ seaborn
 plotly_express
 streamlit
 matplotlib==3.5.2
-pathlib
-BeautifulSoup4
-logging
-shutil
+
