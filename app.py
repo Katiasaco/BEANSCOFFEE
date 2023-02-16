@@ -153,7 +153,7 @@ with tab_plots:
         st.plotly_chart(graf5)
 
         
-    st.write('Valores del café y connotaciones)
+    st.write('Valores del café y connotaciones')
     st.image('valores.png')
         
     import plotly.express as px
