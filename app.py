@@ -55,7 +55,6 @@ st.image('eje.jpg')
 tabs = st.tabs(['HISTORIA', 'CAFÉ', 'CLIENTES', 'DATOS', 'ANALISIS CIENTÍFICO'])      
         
 tab_plots = tabs[0]
-
 with tab_plots:
     st.markdown("<h1 style='text-align: center; color: BROWN;'>¿QUIÉNES SOMOS?</h1>", unsafe_allow_html=True)
     st.markdown(
@@ -169,9 +168,8 @@ with tab_plots:
     graf4=px.box(new_df,x= "Country.of.Origin", y = "Quakers",color ="Country.of.Origin",points='all', template="plotly_dark")
     st.plotly_chart(graf4)
  
-
- tab_plots = tabs[4]
- with tab_plots:
+tab_plots = tabs[4]
+with tab_plots:
     st.write('Adentrándonos en un análisis más profundo de los datos, hemos realizado un modelo predictivo con NeuralProphet')
         # Librerías
     from neuralprophet import NeuralProphet
