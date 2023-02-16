@@ -170,7 +170,7 @@ with tab_plots:
  
 tab_plots = tabs[4]
 with tab_plots:
-    st.title('MODELO PREDICTIVO')
+    st.markdown("<h1 style='text-align: center; color: BROWN;'>MODELO PREDICTIVO</h1>", unsafe_allow_html=True)
     st.write('Adentrándonos en un análisis más profundo de los datos, hemos realizado un modelo predictivo con NeuralProphet')
     st.image('foto1.png')
     st.image('foto2.png')
