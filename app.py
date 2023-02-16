@@ -52,7 +52,7 @@ st.image('eje.jpg')
 
 
 ### TAB PARA ORDENAR LA PÁGINA --------------------
-tabs = st.tabs(['HISTORIA', 'CAFÉ', 'CLIENTES', 'DATOS'])      
+tabs = st.tabs(['HISTORIA', 'CAFÉ', 'CLIENTES', 'DATOS', 'ANALISIS CIENTÍFICO'])      
         
 tab_plots = tabs[0]
 
