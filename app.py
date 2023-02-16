@@ -13,7 +13,7 @@ precio.fillna(0, inplace=True)
 precio["date"] = pd.to_datetime(precio["date"])
 precio['year'] = precio['date'].dt.year
 
-a=pd.read_csv('https://github.com/Katiasaco/BEANSCOFFEE/blob/main/arabica_data_cleaned.csv')
+a=pd.read_csv('https://raw.githubusercontent.com/Katiasaco/BEANSCOFFEE/main/arabica_data_cleaned.csv')
 ro=pd.read_csv('https://github.com/Katiasaco/BEANSCOFFEE/blob/main/robusta_data_cleaned.csv')
 
 
