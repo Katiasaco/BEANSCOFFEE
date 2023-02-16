@@ -91,7 +91,7 @@ with tab_plots:
 
 tab_plots = tabs[2]
 with tab_plots:
-    st.markdown("<h1 style='text-align: center; color: WHITE;'>Opiniones de nuestros clientes </h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: BROWN;'>Opiniones de nuestros clientes </h1>", unsafe_allow_html=True)
     st.markdown(
             """
             <style>
@@ -133,7 +133,13 @@ if st.sidebar.button('Eje Cafetero'):
 
 if st.sidebar.button('Precios'):
 
-    st.title('GRÁFICO TEMPORAL DE PRECIOS DEL CAFÉ')
+    
+    # Define el título en Markdown con estilo CSS
+    titulo = "<h1 style='color: BROWN;'>LINEA TEMPORAL DEL CAFÉ</h1>"
+
+    # Muestra el título utilizando la función st.markdown()
+    st.markdown(titulo, unsafe_allow_html=True)
+
     import streamlit as st
     import plotly.express as px
 
